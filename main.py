@@ -80,7 +80,7 @@ def main():
                     childdata = get_userdata(users[child])
                 else:
                     childdata = db[child]
-                parent_sex = 'MO' if (int(user) % 2) == 0 else 'FA'
+                parent_sex = 'MO' if (int(user[10]) % 2) == 0 else 'FA'
                 childdata['Relation'].append({"RelationId": {"PersonNr": user},"Relationstyp": parent_sex})
                 db[child] = childdata
                 userdata['Relation'].append({"RelationId": {"PersonNr": child},"Relationstyp": 'B'})
